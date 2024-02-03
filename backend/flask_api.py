@@ -1,8 +1,22 @@
 from flask import Flask, request
 from finance_api import get_stock_price
 import json
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
+# Route for seeing a data
+@app.route('/data', methods=['GET'])
+def get_time():
+    print("test")
+    # Returning an api for showing in  reactjs
+    return json.dumps({
+        'Name':"geek", 
+        "Age":"22",
+        "Date":"blah", 
+        "programming":"python"
+        }, indent = 4), 200
 
 @app.route('/stock-history', methods=['GET'])
 def stock_history():
