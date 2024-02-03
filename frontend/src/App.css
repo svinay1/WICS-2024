@@ -41,25 +41,35 @@
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  /* font-family: 'Georgia', sans-serif; */
+  background-color: rgba(255, 39, 158, 0.237);
+  color: rgb(0, 0, 0);
 }
 
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  /* background-color: rgb(57, 39, 255);
+  color: rgb(204, 188, 15); */
 }
 
 .navbar {
-  background-color: black;
+  background-color: rgb(255, 39, 158);
   color: white;
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bolder;
+  /* box-shadow: 20px, 20px, rgb(0, 0, 0); */
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  padding-left: 15px;
+  /* font-family: "Brush Script MT", cursive;  */
+  /* font-family: 'Arial', sans-serif; */
 }
 
 nav ul {
@@ -76,4 +86,19 @@ nav a {
   color: white;
   font-weight: bold;
   font-size: 1rem;
+}
+
+h1 {
+  padding-top: 50px;
+  scale: 1.5;
+  font-family: "Brush Script MT", cursive; 
+  /* font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  line-height: 26.4px;  */
+}
+
+h2{
+  padding-top: 5px;
+  font-weight: lighter;
 }

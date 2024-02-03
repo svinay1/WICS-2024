@@ -10,17 +10,18 @@ function App() {
         <div className="logo">GirlMath</div>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="http://localhost:3000/">Home</a></li>
+            <li><a href="https://google.com/">Stocks</a></li>
+            <li><a href="#">Tips</a></li>
           </ul>
         </nav>
       </header>
-
+      {/* image of the barbie head */}
       <h1>Hi Barbie!</h1>
+      <h2> Let's do some girl math.</h2>
       {/* <MyComponent /> */}
 
+      {/* hey */}
     </div>
   );
 }
