@@ -42,25 +42,47 @@
 body {
   margin: 0;
   /* font-family: 'Georgia', sans-serif; */
-  background-color: rgba(255, 39, 158, 0.237);
+  background-color: rgba(250, 215, 239);
   color: rgb(0, 0, 0);
+  /* padding-top: 100px; */
+
 }
 
 .App {
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  /* padding-top: 100px; */
   /* background-color: rgb(57, 39, 255);
   color: rgb(204, 188, 15); */
 }
 
 .navbar {
+  position: sticky;
   background-color: rgb(255, 39, 158);
+  box-shadow: 0 -6px 10px 7px rgba(193, 2, 139, 0.696);
   color: white;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bolder;
+  /* font-weight: bolder; */
+  /* box-shadow: 20px, 20px, rgb(0, 0, 0); */
+}
+
+.missionBox {
+  background-color: rgb(255, 241, 249);
+  box-shadow: 10px 0px 10px rgba(193, 2, 139, 0.4);
+  color: black;
+  /* font-weight: bolder; */
+  /* font-size: 1rem; */
+  /* font-size: l;
+  padding: 100px; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* text-align: center; */
+  /* align-items: center; */
+  padding: 15px;
+  /* font-weight: bolder; */
   /* box-shadow: 20px, 20px, rgb(0, 0, 0); */
 }
 
@@ -70,6 +92,7 @@ body {
   padding-left: 15px;
   /* font-family: "Brush Script MT", cursive;  */
   /* font-family: 'Arial', sans-serif; */
+  text-shadow: -1px 1px 3px rgba(255, 228, 249, 0.756)
 }
 
 nav ul {
@@ -78,27 +101,44 @@ nav ul {
 }
 
 nav ul li {
-  margin-right: 20px;
+  margin-right: 30px;
+  /* font-weight: lighter; */
 }
 
 nav a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-shadow: -1px 1px 3px rgba(255, 228, 249, 0.756);
+  padding-bottom: 100px;
 }
 
 h1 {
-  padding-top: 50px;
+  padding-top: 10px;
+  /* padding-bottom: 0px; */
   scale: 1.5;
-  font-family: "Brush Script MT", cursive; 
+  font-family: "Brush Script MT", cursive;
+  color: white;
+  font-size: 5rem;
   /* font-style: normal; 
   font-variant: normal; 
   font-weight: 700; 
   line-height: 26.4px;  */
+  text-shadow: -1px 1px 10px rgb(255, 39, 158, 0.75)
 }
 
 h2{
-  padding-top: 5px;
+  /* padding-top: 500px; */
   font-weight: lighter;
+  text-shadow: -1px 1px 3px rgba(255, 228, 249, 0.756)
+
+}
+
+h3 {
+  color: black;
+  text-align: center;
+  font-weight: lighter;
+  
+  text-shadow: -1px 1px 3px rgba(255, 228, 249, 0.756)
 }
