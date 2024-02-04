@@ -486,3 +486,22 @@ links ul2 li2 {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.tips-send-button {
+  padding: 15px;
+  background-color: #fd8cdc;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+h6{
+  /* padding-top: 500px; */
+  font-weight: lighter;
+  text-shadow: -1px 1px 3px rgba(255, 228, 249, 0.756);
+  text-wrap: pretty;
+  font-size: 18px;
+  padding: 0;
+}

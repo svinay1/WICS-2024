@@ -29,8 +29,8 @@ const Resources = () => {
         <header className="resBackgroundBox"> 
                 <subheadingS> Beginner’s Guide to Girl Math </subheadingS>
                 <div>
-                    <button onClick={changeAdvice} type="button">Budgeting</button>
-                    <button onClick={changeAdvice} type="button">Investing</button>
+                    <button onClick={changeAdvice} className = "tips-send-button" type="button">Budgeting</button>
+                    <button onClick={changeAdvice} className = "tips-send-button"type="button">Investing</button>
                 </div>
                 <header className="tips">
                     <h2>{text1}</h2>
