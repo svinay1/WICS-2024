@@ -32,20 +32,23 @@ list_trainer = ListTrainer(my_bot)
 for item in (small_talk, girl_talk_1, girl_talk_2, girl_talk_3):
     list_trainer.train(item)
 
+"""
 print(my_bot.get_response("hi"))
 print(my_bot.get_response("what's your name?"))
 print(my_bot.get_response("I need help with short term goal"))
 print(my_bot.get_response("I need help with long term goal"))
 print(my_bot.get_response("I am not familiar with finance"))
+"""
 
 corpus_trainer = ChatterBotCorpusTrainer(my_bot)
 corpus_trainer.train('chatterbot.corpus.english')
 
-while True:
+def get_output(bot_input):
+    #while True:
     try:
-        bot_input = input("Barbie: ")
-        bot_response = my_bot.get_response(bot_input)
-        print(f"{my_bot.name}:{bot_response}")
-    except (KeyboardInterrupt, EOFError, SystemExit):
-        break
+        bot_response = str(my_bot.get_response(bot_input))
+        return {"test": bot_response}
 
+    except (KeyboardInterrupt, EOFError, SystemExit) as e:
+        # Log the exception or return an error message
+        return {'error': str(e)}
