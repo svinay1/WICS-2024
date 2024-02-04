@@ -15,7 +15,13 @@ import Chatbot from './Chatbot'
 var prices = [];
 function getPrices(stocks, symbols) {
   for (let i = 0; i < symbols.length; i++) {
-      prices.push(symbols[i] + " : " + stocks[symbols[i]] + "\n");
+    const normal = symbols[i] + " : " + stocks[symbols[i]] + ",             ";
+    const last = symbols[i] + " : " + stocks[symbols[i]]
+      if (i < symbols.length - 1) {
+        prices.push(normal);
+      } else {
+        prices.push(last);
+      }
       if (prices.length === symbols.length) {
         break;
       }
@@ -137,7 +143,7 @@ function Home() {
           <header className="backgroundBox">
             <subheadingS> Real-Time Market</subheadingS>
               <ChartTabs />
-              {<p>{message}</p>}
+              {<h6>{message}</h6>}
           </header>
           <header className="backgroundBox">
             <subheadingS> Current Events</subheadingS>
