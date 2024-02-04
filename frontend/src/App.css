@@ -254,3 +254,11 @@ h4 {
 .chart-container {
   height: 500px;
 }
+
+.tips {
+  background-color: rgb(216, 25, 133);
+  color: white;
+  height: 100px;
+  text-align: center;
+  margin-top: 10px;
+}
