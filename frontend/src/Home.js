@@ -7,18 +7,8 @@ import barbieDollLeft from './flippedBarbie.png';
 import girlMathLogo from './GIRLMATHIcon.png';
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
 import ChartTabs from './ChartTabs';
 import Resources from './Resources';
-
-
-const sdk = new ChartsEmbedSDK({
-  baseUrl: "https://charts.mongodb.com/charts-project-0-mklsn",
-  showAttribution: false
-});
-const summaryChart = sdk.createChart({
-  chartId: "65bf0d9c-e856-4e10-89b9-ef4bf399f661"
-});
 
 var prices = [];
 function getPrices(stocks, symbols) {
@@ -50,11 +40,6 @@ function Home() {
   };
 
   const [message, setMessage] = useState(null);
-
-  useEffect(() => {
-    summaryChart.render(document.getElementById("chart-data"));
-    // .catch(() => window.alert("Chart failed to initialize"));
-  }, []);
 
   useEffect(() => {
         axios.get('http://127.0.0.1:5000/current-price')
