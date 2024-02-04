@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import ChartTabs from './ChartTabs';
 import Resources from './Resources';
+import Chatbot from './Chatbot'
 
 var prices = [];
 function getPrices(stocks, symbols) {
@@ -41,6 +42,10 @@ function Home() {
 
   const [message, setMessage] = useState(null);
 
+  /*const [userInput, setUserInput] = useState('');
+  const [botResponse, setBotResponse] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);*/
+
   useEffect(() => {
         axios.get('http://127.0.0.1:5000/current-price')
         .then(response => {
@@ -49,6 +54,21 @@ function Home() {
         .catch(error => { console.error("Error fetching data:", error);
         });
     }, []);
+
+  /*const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      try {
+        const response = await axios.post(`http://127.0.0.1:5000/get_response`, {}, { params: {
+          input: userInput
+        }})
+        .then(response => setBotResponse(response.data.response))
+        .catch(err => console.warn(err));
+      } catch (error) {
+        console.error('Error fetching response:', error);
+      }
+      setFormSubmitted(true);
+    };*/
   
   return (
     <div className="App">    
@@ -110,6 +130,11 @@ function Home() {
             <h3>Our Mission</h3>
             <h2> To empower women to take control of their financial wellbeing in the pinkest way. We believe that everyone deserves to feel confident and capable in managing their personal finances. Through accessible information, interactive tools, and a supportive online community, we aim to provide women with the knowledge, skills, and confidence they need to make informed financial decisions, achieve their goals, and build wealth. </h2>
         </header>
+      </div>
+
+      <div id="resources">
+        <h4> Chatbot </h4>
+        <Chatbot />
       </div>
       
     </div>
