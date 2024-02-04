@@ -25,16 +25,21 @@ const ChartTabs = () => {
           });
           summaryChart.render(chartContainer);
 	} else if (tab === 2) {
-          const bpChart = sdk.createChart({
+          const teamsChart = sdk.createChart({
             chartId: "a61c7008-41fe-4a2f-92ff-8de2400bcc98" 
           });
-          bpChart.render(chartContainer);
+          teamsChart.render(chartContainer);
 	} else if (tab === 3) {
           const cvxChart = sdk.createChart({
             chartId: "65bf379b-3931-43b1-85ce-2c8abea2974f" 
           });
           cvxChart.render(chartContainer);
-      }
+      } else if (tab === 4) {
+        const gsChart = sdk.createChart({
+          chartId: "95b19997-4642-4b55-b8c2-c54f158c4d2f" 
+        });
+        gsChart.render(chartContainer);
+    }
     };
 
     embedChart();
@@ -60,6 +65,12 @@ const ChartTabs = () => {
           onClick={() => handleTabClick(3)}
         >
           Tab 3
+        </div>
+        <div
+          className={`tab ${tab === 4 ? 'active' : ''}`}
+          onClick={() => handleTabClick(4)}
+        >
+          Tab 4
         </div>
       </div>
       <div className="tab-content" id="chart-data">
