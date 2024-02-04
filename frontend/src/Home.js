@@ -7,7 +7,7 @@ import girlMathLogo from './GIRLMATHIcon.png';
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
-import Tabs from './Tabs';
+import ChartTabs from './ChartTabs';
 
 const sdk = new ChartsEmbedSDK({
   baseUrl: "https://charts.mongodb.com/charts-project-0-mklsn",
@@ -103,12 +103,12 @@ function Home() {
 
       <div id="stock">
         <h4> Stocks </h4>
+        <ChartTabs />
         {<p>{message}</p>}
       </div>
 
       <div id="resources">
         <h4> Resources </h4>
-        < Tabs />
       </div>
 
       <div id = "about">

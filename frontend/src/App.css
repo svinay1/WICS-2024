@@ -197,13 +197,13 @@ h4 {
 
 #chart-data {
   margin: auto;
-  width: 50%;
+  width: 90%;
   height: 500px;
 }
 
 /* HorizontalTabs.css */
 .tabs-container {
-  width: 400px;
+  width: 1000px;
   margin: 20px auto;
 }
 
@@ -233,5 +233,9 @@ h4 {
 
 .tab-content {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 2px;
+}
+
+.chart-container {
+  height: 500px;
 }
