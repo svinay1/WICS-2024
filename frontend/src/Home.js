@@ -1,9 +1,32 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import barbieDoll from './entrepreneurBarbie.png';
 import girlMathLogo from './GIRLMATHIcon.png';
+import { useState, useEffect } from 'react';
+import axios from "axios";
+import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
+import Tabs from './Tabs';
+
+const sdk = new ChartsEmbedSDK({
+  baseUrl: "https://charts.mongodb.com/charts-project-0-mklsn",
+  showAttribution: false
+});
+const summaryChart = sdk.createChart({
+  chartId: "65bf0d9c-e856-4e10-89b9-ef4bf399f661"
+});
+
+var prices = [];
+function getPrices(stocks, symbols) {
+  for (let i = 0; i < symbols.length; i++) {
+      prices.push(symbols[i] + " : " + stocks[symbols[i]] + "\n");
+      if (prices.length === symbols.length) {
+        break;
+      }
+  }
+  return prices;
+}
 
 function Home() {
   const scrollToHome = () => {
@@ -22,6 +45,22 @@ function Home() {
     const aboutElement = document.getElementById('about');
     aboutElement.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const [message, setMessage] = useState(null);
+
+  useEffect(() => {
+    summaryChart.render(document.getElementById("chart-data"));
+    // .catch(() => window.alert("Chart failed to initialise"));
+  }, []);
+
+  useEffect(() => {
+        axios.get('http://127.0.0.1:5000/current-price')
+        .then(response => {
+          setMessage(getPrices(response.data, ['BP', 'CVX', 'DKNG', 'HD', 'LMT', 'GS', 'GOOG', 'META', 'RBLX', 'TEAM'])); 
+        })
+        .catch(error => { console.error("Error fetching data:", error);
+        });
+    }, []);
   
   return (
     <div className="App">    
@@ -64,10 +103,12 @@ function Home() {
 
       <div id="stock">
         <h4> Stocks </h4>
+        {<p>{message}</p>}
       </div>
 
       <div id="resources">
         <h4> Resources </h4>
+        < Tabs />
       </div>
 
       <div id = "about">

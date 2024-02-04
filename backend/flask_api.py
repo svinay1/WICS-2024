@@ -8,10 +8,6 @@ CORS(app)
 
 @app.route('/current-price', methods=['GET'])
 def current_stock_price():
-    #symbol = request.args.get('symbol', default=None, type=str)
-    #start_date = request.args.get('start_date', default=None, type=str)
-    #end_date = request.args.get('end_date', default=str(datetime.today().date()), type=str)
-
     current_prices = get_sponsor_stock_prices_current(['BP', 'CVX', 'DKNG', 'HD', 'LMT', 'GS', 'GOOG', 'META', 'RBLX', 'TEAM'], "1d")
 
     if current_prices is not None:
