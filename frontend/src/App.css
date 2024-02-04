@@ -261,4 +261,21 @@ h4 {
   height: 100px;
   text-align: center;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: grid;
+  /* text-size-adjust: lighter; */
+  font-size: 12px;
+  font-weight: lighter;
+  /* grid-template-rows: repeat(2, 1fr); */
+  /* align-items: center; */
+  /* text-justify: distribute; */
+  /* text-wrap: pretty; */
+  /* text-align: center;
+  padding: 20px;
+  margin: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc; */
 }
