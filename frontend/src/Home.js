@@ -3,11 +3,14 @@ import './App.css';
 import React from 'react';
 //import { Link } from 'react-router-dom';
 import barbieDoll from './entrepreneurBarbie.png';
+import barbieDollLeft from './flippedBarbie.png';
 import girlMathLogo from './GIRLMATHIcon.png';
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import ChartsEmbedSDK from "@mongodb-js/charts-embed-dom";
 import ChartTabs from './ChartTabs';
+import Resources from './Resources';
+
 
 const sdk = new ChartsEmbedSDK({
   baseUrl: "https://charts.mongodb.com/charts-project-0-mklsn",
@@ -37,7 +40,7 @@ function Home() {
     const stockElement = document.getElementById('stock');
     stockElement.scrollIntoView({ behavior: 'smooth' });
   };
-  const scrollToResouces = () => {
+  const scrollToResources = () => {
     const resElement = document.getElementById('resources');
     resElement.scrollIntoView({ behavior: 'smooth' });
   };
@@ -50,7 +53,7 @@ function Home() {
 
   useEffect(() => {
     summaryChart.render(document.getElementById("chart-data"));
-    // .catch(() => window.alert("Chart failed to initialise"));
+    // .catch(() => window.alert("Chart failed to initialize"));
   }, []);
 
   useEffect(() => {
@@ -66,13 +69,17 @@ function Home() {
     <div className="App">    
       <div id = "home">
         <header className="navbar">
-        <div className="logo">GirlMath</div>
+        <a href="#home" onClick={scrollToHome}>
+            <img src={girlMathLogo} alt="Girl Math Logo" className="gm-logo-header" />
+        </a>
+        {/* <img src={girlMathLogo} alt="Girl Math Logo" className="gm-logo-header" /> */}
+        {/* <div className="logo">GirlMath</div> */}
         <nav>
           <ul>
             {/* <li><a href="https://google.com/">Stocks</a></li> */}
             <li><a href="#home" onClick={scrollToHome}>Home</a></li>
             <li><a href="#stocks" onClick={scrollToStock}>Stocks</a></li>
-            <li><a href="#resources" onClick={scrollToResouces}>Resouces</a></li>
+            <li><a href="#resources" onClick={scrollToResources}>Resources</a></li>
             <li><a href="#about" onClick={scrollToAbout}>About</a></li>
           </ul>
         </nav>
@@ -90,7 +97,7 @@ function Home() {
       {/* <div id="home"> */}
       <div className="barbie-dolls">
         {/* <img src={barbieDoll} alt="Barbie Doll" className="barbie-doll" /> */}
-        <img src={barbieDoll} alt="Barbie Doll" className="barbie-doll" />
+        <img src={barbieDollLeft} alt="Barbie Doll Left" className="barbie-doll" />
         {/* <h1>Girl Math</h1> */}
         <img src={girlMathLogo} alt="Girl Math Logo" className="gm-logo" />
         <img src={barbieDoll} alt="Barbie Doll" className="barbie-doll" />
@@ -109,12 +116,14 @@ function Home() {
 
       <div id="resources">
         <h4> Resources </h4>
+        <Resources />
       </div>
+
 
       <div id = "about">
         <header className="missionBox"> 
             <h3>Our Mission</h3>
-            <h2>is to empower women to take control of their financial wellbeing in the pinkest way. We believe that everyone deserves to feel confident and capable in managing their personal finances. Through accessible information, interactive tools, and a supportive online community, we aim to provide women with the knowledge, skills, and confidence they need to make informed financial decisions, achieve their goals, and build wealth. </h2>
+            <h2> To empower women to take control of their financial wellbeing in the pinkest way. We believe that everyone deserves to feel confident and capable in managing their personal finances. Through accessible information, interactive tools, and a supportive online community, we aim to provide women with the knowledge, skills, and confidence they need to make informed financial decisions, achieve their goals, and build wealth. </h2>
         </header>
       </div>
       
