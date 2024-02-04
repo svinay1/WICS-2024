@@ -4,7 +4,6 @@ def get_stock_price(symbol, period):
     try:
         stock = yf.Ticker(symbol)
         current_price = stock.history(period=period)['Close'].iloc[-1]
-        #historical_prices = stock.history(period='1m')
         return current_price
     except Exception as e:
         print(f"Error: {e}")
@@ -37,5 +36,3 @@ def get_sponsor_stock_prices_over_time(symbols):
         output[symbols[idx]] = get_stock_price_over_time(symbols[idx])
 
     return output
-
-print(list(range(1, 31)))
