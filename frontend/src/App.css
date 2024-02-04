@@ -177,7 +177,7 @@ h3{
 
 h4 {
   padding-top: 100px;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
   font-size: 3rem;
   /* font-family: "Brush Script MT", cursive; */
   text-shadow: -1px 1px 10px rgb(135, 206, 208, 0.75);
