@@ -63,7 +63,7 @@ function Home() {
       </div>
 
       <div id="stock">
-        <h4> Stock </h4>
+        <h4> Stocks </h4>
       </div>
 
       <div id="resources">
